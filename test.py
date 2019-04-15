@@ -56,16 +56,24 @@ def Encode():
     for comb in combinations(key, 3):
         combination.append(comb)
     shuffle(combination)
+    print(len(combination))
     for i in range(rowsheet):
         temp = []
         for j in range(colsheet):
             for k in range(len(data[i][j])):
                 a = ord(data[i][j][k])
                 temp.append(combination[a])
+                temp+=([combination[a]]*5)  #this line extends generated colors...
+        shuffle(temp)
         stud.append(temp)
+        print(stud)
+
 
     print("Student Data has been Encoded\n")
-    print(stud)
+    #print(stud)
+    print(len(stud[0]))
+    print(len(stud[1]))
+    print(len(stud[2]))
 
 
 
